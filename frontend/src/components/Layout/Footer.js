@@ -55,7 +55,9 @@ const Footer = () => {
               <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
                 <span className="text-white text-xl font-bold">F</span>
               </div>
-              <h3 className="text-lg font-bold">{t(mockData.festival.name)}</h3>
+              <h3 className={`text-lg font-bold ${
+                currentLanguage === 'ar' ? 'arabic-festival-title' : ''
+              }`}>{t(mockData.festival.name)}</h3>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               {t(mockData.festival.description)}
