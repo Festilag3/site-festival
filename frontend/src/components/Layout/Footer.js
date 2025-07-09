@@ -4,7 +4,7 @@ import { mockData } from '../../data/mock';
 import { Mail, Phone, MapPin, Calendar, Users } from 'lucide-react';
 
 const Footer = () => {
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
 
   const quickLinks = {
     ar: [
