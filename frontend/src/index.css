@@ -86,3 +86,9 @@ code {
     @apply bg-background text-foreground;
     }
 }
+
+/* Arabic Festival Title Font */
+.arabic-festival-title {
+  font-family: 'Jassmin Typo', 'Arial', sans-serif;
+  font-weight: 700;
+}
