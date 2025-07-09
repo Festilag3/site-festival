@@ -30,7 +30,9 @@ const Header = () => {
               <span className="text-white text-2xl font-bold">F</span>
             </div>
             <div className="hidden md:block">
-              <h1 className="text-lg font-bold text-gray-900 leading-tight">
+              <h1 className={`text-lg font-bold text-gray-900 leading-tight ${
+                currentLanguage === 'ar' ? 'arabic-festival-title' : ''
+              }`}>
                 {t(mockData.festival.name)}
               </h1>
               <p className="text-sm text-gray-600">{t(mockData.festival.dates)}</p>
