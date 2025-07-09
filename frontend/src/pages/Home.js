@@ -5,7 +5,7 @@ import { mockData } from '../data/mock';
 import { Calendar, MapPin, Users, Trophy, Palette, Film, ArrowRight } from 'lucide-react';
 
 const Home = () => {
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
 
   const features = [
     {
