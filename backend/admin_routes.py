@@ -6,10 +6,6 @@ import os
 from datetime import datetime
 import hashlib
 
-# Get database
-import server
-db = server.db
-
 admin_router = APIRouter(prefix="/admin", tags=["admin"])
 
 # Simple authentication (for demo purposes)
@@ -21,6 +17,13 @@ def verify_admin_credentials(username: str, password: str) -> bool:
 
 def get_password_hash(password: str) -> str:
     return hashlib.sha256(password.encode()).hexdigest()
+
+# We'll set the db reference later to avoid circular imports
+db = None
+
+def set_db(database):
+    global db
+    db = database
 
 # Admin Authentication
 @admin_router.post("/login", response_model=AdminToken)
