@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Depends, status
 from typing import List, Optional
 from motor.motor_asyncio import AsyncIOMotorClient
-from .models import *
+from models import *
 import os
 from datetime import datetime
 import hashlib
