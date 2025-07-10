@@ -10,9 +10,6 @@ from typing import List
 import uuid
 from datetime import datetime
 
-# Import admin routes
-from .admin_routes import admin_router
-
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
@@ -26,6 +23,9 @@ app = FastAPI()
 
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
+
+# Import admin routes after db is defined
+from admin_routes import admin_router
 
 
 # Define Models
