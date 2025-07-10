@@ -7,7 +7,8 @@ from datetime import datetime
 import hashlib
 
 # Get database
-from .server import db
+import server
+db = server.db
 
 admin_router = APIRouter(prefix="/admin", tags=["admin"])
 
