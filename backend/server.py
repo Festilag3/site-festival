@@ -28,7 +28,10 @@ app = FastAPI()
 api_router = APIRouter(prefix="/api")
 
 # Import admin routes after db is defined
-from admin_routes import admin_router
+from admin_routes import admin_router, set_db
+
+# Set the database reference for admin routes
+set_db(db)
 
 
 # Define Models
