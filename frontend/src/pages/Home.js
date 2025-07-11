@@ -163,17 +163,17 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 laghouat-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               {t({
                 ar: "مميزات المهرجان",
                 fr: "Les Highlights du Festival",
                 en: "Festival Highlights"
               })}
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-white/90 max-w-2xl mx-auto">
               {t({
                 ar: "اكتشف ما يجعل مهرجاننا تجربة فريدة ومميزة",
                 fr: "Découvrez ce qui rend notre festival unique et exceptionnel",
@@ -186,7 +186,7 @@ const Home = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
+                className="bg-white/95 backdrop-blur-sm rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
               >
                 <div className="text-purple-600 mb-6 group-hover:scale-110 transition-transform duration-300">
                   {feature.icon}
