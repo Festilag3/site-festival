@@ -184,25 +184,25 @@ const AdminArtists = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-gray-200">
+      <header className="bg-white/95 backdrop-blur-sm shadow-lg menu-laghouat-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center space-x-4">
               <button
                 onClick={() => navigate('/admin/dashboard')}
-                className="p-2 text-gray-500 hover:text-gray-700 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+                className="p-2 text-white hover:text-yellow-200 rounded-lg hover:bg-white/20 transition-colors duration-200"
               >
                 <ArrowLeft className="w-5 h-5" />
               </button>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">
+                <h1 className="text-2xl font-bold text-white">
                   {t({
                     ar: 'إدارة الفنانين',
                     fr: 'Gestion des Artistes',
                     en: 'Artist Management'
                   })}
                 </h1>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-white/80">
                   {t({
                     ar: 'إضافة وتعديل وحذف الفنانين المشاركين',
                     fr: 'Ajouter, modifier et supprimer les artistes participants',
@@ -218,7 +218,7 @@ const AdminArtists = () => {
                 setEditingArtist(null);
                 resetForm();
               }}
-              className="flex items-center space-x-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors duration-200"
+              className="flex items-center space-x-2 px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-lg hover:bg-white/30 transition-colors duration-200 border border-white/20"
             >
               <Plus className="w-5 h-5" />
               <span>{t({
