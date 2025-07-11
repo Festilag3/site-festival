@@ -93,7 +93,7 @@ code {
 
 /* Laghouat Background for Menu Sections */
 .laghouat-background {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1920&h=1080&fit=crop');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1539650116574-75c0c6d73c6e?w=1920&h=1080&fit=crop');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -102,7 +102,7 @@ code {
 
 /* Menu avec arrière-plan Laghouat */
 .menu-laghouat-bg {
-  background: linear-gradient(rgba(139, 69, 19, 0.85), rgba(101, 67, 33, 0.85)), url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1920&h=1080&fit=crop');
+  background: linear-gradient(rgba(139, 69, 19, 0.85), rgba(101, 67, 33, 0.85)), url('https://images.unsplash.com/photo-1539650116574-75c0c6d73c6e?w=1920&h=1080&fit=crop');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
