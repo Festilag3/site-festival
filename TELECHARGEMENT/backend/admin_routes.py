@@ -179,6 +179,80 @@ async def delete_film(film_id: str):
         raise HTTPException(status_code=404, detail="Film not found")
     return {"message": "Film deleted successfully"}
 
+# Program Management
+@admin_router.get("/program", response_model=List[ProgramDay])
+async def get_program():
+    program = await db.program.find().sort("day", 1).to_list(1000)
+    return [ProgramDay(**day) for day in program]
+
+@admin_router.post("/program", response_model=ProgramDay)
+async def create_program_day(program_day: ProgramDayCreate):
+    program_dict = program_day.dict()
+    program_obj = ProgramDay(**program_dict)
+    await db.program.insert_one(program_obj.dict())
+    return program_obj
+
+@admin_router.put("/program/{day_id}", response_model=ProgramDay)
+async def update_program_day(day_id: str, program_update: ProgramDayUpdate):
+    program_day = await db.program.find_one({"id": day_id})
+    if not program_day:
+        raise HTTPException(status_code=404, detail="Program day not found")
+    
+    update_data = program_update.dict(exclude_unset=True)
+    update_data["updated_at"] = datetime.utcnow()
+    
+    await db.program.update_one(
+        {"id": day_id},
+        {"$set": update_data}
+    )
+    
+    updated_program_day = await db.program.find_one({"id": day_id})
+    return ProgramDay(**updated_program_day)
+
+@admin_router.delete("/program/{day_id}")
+async def delete_program_day(day_id: str):
+    result = await db.program.delete_one({"id": day_id})
+    if result.deleted_count == 0:
+        raise HTTPException(status_code=404, detail="Program day not found")
+    return {"message": "Program day deleted successfully"}
+
+# Gallery Management
+@admin_router.get("/gallery", response_model=List[GalleryItem])
+async def get_gallery():
+    gallery = await db.gallery.find().to_list(1000)
+    return [GalleryItem(**item) for item in gallery]
+
+@admin_router.post("/gallery", response_model=GalleryItem)
+async def create_gallery_item(gallery_item: GalleryItemCreate):
+    gallery_dict = gallery_item.dict()
+    gallery_obj = GalleryItem(**gallery_dict)
+    await db.gallery.insert_one(gallery_obj.dict())
+    return gallery_obj
+
+@admin_router.put("/gallery/{item_id}", response_model=GalleryItem)
+async def update_gallery_item(item_id: str, gallery_update: GalleryItemUpdate):
+    gallery_item = await db.gallery.find_one({"id": item_id})
+    if not gallery_item:
+        raise HTTPException(status_code=404, detail="Gallery item not found")
+    
+    update_data = gallery_update.dict(exclude_unset=True)
+    update_data["updated_at"] = datetime.utcnow()
+    
+    await db.gallery.update_one(
+        {"id": item_id},
+        {"$set": update_data}
+    )
+    
+    updated_gallery_item = await db.gallery.find_one({"id": item_id})
+    return GalleryItem(**updated_gallery_item)
+
+@admin_router.delete("/gallery/{item_id}")
+async def delete_gallery_item(item_id: str):
+    result = await db.gallery.delete_one({"id": item_id})
+    if result.deleted_count == 0:
+        raise HTTPException(status_code=404, detail="Gallery item not found")
+    return {"message": "Gallery item deleted successfully"}
+
 # Contact Management
 @admin_router.get("/contacts", response_model=List[Contact])
 async def get_contacts():
