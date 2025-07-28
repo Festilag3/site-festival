@@ -3,9 +3,9 @@ export const mockData = {
   // Festival info
   festival: {
     name: {
-      ar: "المهرجان الثقافي الوطني للفنون التشكيلية والفنون البصرية لولاية الأغواط",
-      fr: "Festival Culturel National des Arts Plastiques et des Arts Visuels de la Wilaya de Laghouat",
-      en: "National Cultural Festival of Plastic Arts and Visual Arts of Laghouat Province"
+      ar: "المهرجان الثقافي الوطني للفنون التشكيلية والفنون البصرية للأغواط",
+      fr: "Festival Culturel National des Arts Plastiques et des Arts Visuels de LAGHOUAT",
+      en: "National Cultural Festival of Plastic Arts and Visual Arts of LAGHOUAT"
     },
     dates: {
       ar: "من 27 سبتمبر إلى 1 أكتوبر 2025",
